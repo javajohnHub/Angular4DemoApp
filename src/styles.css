@@ -2,11 +2,13 @@
 a{
   text-decoration: none;
 }
+a:hover{
+  text-decoration: none;
+}
 body{
   background-color: azure;
 }
-.caption{
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid black;
+
+#search{
+  margin-top: 20px;
 }

@@ -7,17 +7,15 @@ import {BookSearchResult} from '../../models/book-search-result';
   selector: 'app-search-result',
   template: `
    <div>
-   <h3><a href="{{canonicalVolumeLink}}" target="_blank">{{title}}</a></h3>
-     <img class="img-responsive img-thumbnail" *ngIf="thumbnail" [src]="thumbnail">
-   <small *ngIf="subtitle">{{subtitle}}</small><br/><span style="color:#8dce56;font-size: xx-large;">{{result.volumeInfo.averageRating || 0}} </span>stars
-     <span style="color:midnightblue">{{ratingsCount || 0}}</span> votes
-     <div class="thumbnail">
-        
-        <div class="caption">
-          <p *ngIf="description">{{description}}</p>
-         </div>
-        {{authors}}
-      </div>
+   <h3><a href="{{canonicalVolumeLink}}" target="_blank">{{title}}</a></h3><small *ngIf="subtitle">{{subtitle}}</small>
+     <div class="row">
+       <div class="col-md-2"><img class="img-responsive img-thumbnail" *ngIf="thumbnail" [src]="thumbnail"></div>
+       <div class="caption col-md-10">
+         <p *ngIf="description">{{description}}</p>
+       </div>
+     </div>
+     <rating [(ngModel)]="result.volumeInfo.averageRating" [max]="5" [readonly]="isReadonly"></rating>
+     - <span style="color:midnightblue"> {{ratingsCount || 0}}</span> votes
       <span style="color: midnightblue">
       <div *ngIf="epubIsAvailable">Available in epub</div>
       <div *ngIf="pdfIsAvailable">Available in pdf</div>
@@ -28,7 +26,7 @@ import {BookSearchResult} from '../../models/book-search-result';
 })
 export class SearchResultComponent {
   @Input() result: BookSearchResult;
-
+  public isReadonly = true;
   get id() {
     return this.result.id;
   }

@@ -7,7 +7,8 @@ import {BookDetailComponent} from './components/books/book-detail.component';
 import {SearchBoxComponent} from './components/books/searchbox.component';
 import {SearchResultComponent} from './components/books/search-result.component';
 import {BookService} from './services/book.service';
-
+import { TooltipModule, RatingModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,10 @@ import {BookService} from './services/book.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    TooltipModule.forRoot(),
+    RatingModule.forRoot(),
+    FormsModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]

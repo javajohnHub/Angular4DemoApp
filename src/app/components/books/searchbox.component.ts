@@ -17,7 +17,11 @@ import {BookService} from '../../services/book.service';
 @Component({
   selector: 'app-search-box',
   template: `
-    <input type="text" placeholder="Search Google Books" autofocus>
+    <form>
+      <div id="search">
+        <input type="text" tooltip="Search Google Books" placement="bottom" class="form-control" placeholder="Search Google Books" autofocus>
+      </div>
+    </form>
   `
 })
 
