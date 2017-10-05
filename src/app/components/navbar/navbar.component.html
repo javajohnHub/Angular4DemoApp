@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Angular4Demo</a>
+    </div>
+      <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav" >
+        <li><a routerLink="/books">Books</a></li>
+
+      </ul>
+        </div>
+    <nav class="visible-xs hidden-md-up">
+      <ul class="nav nav-pills nav-stacked scrollable-menu"  (click)="isCollapsed = !isCollapsed;true"  >
+        <li class="nav-item" ><a class="nav-link" routerLink="/books">Books</a></li>
+
+      </ul>
+    </nav>
+    </div>
+  </nav>
+    <!--<div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/">About</a></li>
+        <li><a routerLink="/github">Github</a></li>
+        <li><a routerLink="/spotify">Spotify</a></li>
+        <li ><a routerLink="/chat">Chat</a></li>
+        <li ><a routerLink="/twitter">Twitter</a></li>
+        <li *ngIf="isAuthenticated()"><a routerLink="/todos">Todos</a></li>
+        <li *ngIf="isAuthenticated() === false"><a routerLink="/login">Login</a></li>
+        <li *ngIf="isAuthenticated() === false"><a routerLink="/register">Register</a></li>
+        <li *ngIf="isAuthenticated()"><a (click)="logoutUser()">Logout</a></li>
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav class="visible-xs hidden-md-up">
+  <ul class="nav nav-pills nav-stacked scrollable-menu" [collapse]="!isCollapsed" (click)="isCollapsed = !isCollapsed; true"  >
+    <li class="nav-item"><a class="nav-link" routerLink="/">About</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/github">Github</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/spotify">Spotify</a></li>
+    <li  class="nav-item"><a class="nav-link" routerLink="/chat">Chat</a></li>
+    <li  class="nav-item"><a class="nav-link" routerLink="/twitter">Twitter</a></li>
+    <li  *ngIf="isAuthenticated()" class="nav-item"><a class="nav-link" routerLink="/todos">Todos</a></li>
+    <li *ngIf="isAuthenticated() === false" class="nav-item"><a class="nav-link" routerLink="/login">Login</a></li>
+    <li  *ngIf="isAuthenticated() === false" class="nav-item"><a class="nav-link" routerLink="/register">Register</a></li>
+    <li *ngIf="isAuthenticated()" class="nav-item"><a class="nav-link" (click)="logoutUser()">Logout</a></li>
+
+  </ul>
+  </nav>-->

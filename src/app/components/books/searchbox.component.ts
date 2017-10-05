@@ -19,7 +19,7 @@ import {BookService} from '../../services/book.service';
   template: `
     <form>
       <div id="search">
-        <input type="text" tooltip="Search Google Books" placement="bottom" class="form-control" placeholder="Search Google Books" autofocus>
+        <input type="text" class="form-control" placeholder="Search Google Books" autofocus>
       </div>
     </form>
   `
