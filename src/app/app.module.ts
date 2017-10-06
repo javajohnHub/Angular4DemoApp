@@ -6,7 +6,7 @@ import {BookSearchComponent} from './components/books/book-search.component';
 import {SearchBoxComponent} from './components/books/searchbox.component';
 import {SearchResultComponent} from './components/books/search-result.component';
 import {BookService} from './services/book.service';
-import { TooltipModule, RatingModule } from 'ngx-bootstrap';
+import { TooltipModule, RatingModule, CollapseModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import {routing} from './app-routing.module';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
@@ -25,6 +25,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     HttpModule,
     TooltipModule.forRoot(),
     RatingModule.forRoot(),
+    CollapseModule.forRoot(),
     FormsModule,
     routing
   ],
