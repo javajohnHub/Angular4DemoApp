@@ -9,17 +9,11 @@
       </button>
       <a class="navbar-brand" href="#">Angular4Demo</a>
     </div>
-    <div *ngIf="!status.isopen" class="collapse navbar-collapse">
+    <div [ngClass]="{'in': status.isopen}" class="collapse navbar-collapse">
       <ul class="nav navbar-nav" >
         <li><a routerLink="/books">Books</a></li>
-
+        <li><a routerLink="/flickr">Flickr</a></li>
       </ul>
     </div>
-        <div *ngIf="status.isopen" class="collapse navbar-collapse in">
-          <ul class="nav navbar-nav" (click)="toggleDropdown($event)">
-            <li><a routerLink="/books">Books</a></li>
-
-          </ul>
-        </div>
     </div>
   </nav>

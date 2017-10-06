@@ -6,6 +6,10 @@ import {BookSearchComponent} from './components/books/book-search.component';
 import {SearchBoxComponent} from './components/books/searchbox.component';
 import {SearchResultComponent} from './components/books/search-result.component';
 import {BookService} from './services/book.service';
+import {FlickrSearchComponent} from './components/flickr/flickr-search.component';
+import {FlickrSearchBoxComponent} from './components/flickr/flickr-searchbox.component';
+import {FlickrResultComponent} from './components/flickr/flickr-result.component';
+import {FlickrService} from './services/flickr.service';
 import { TooltipModule, RatingModule, CollapseModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import {routing} from './app-routing.module';
@@ -18,7 +22,10 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     BookSearchComponent,
     SearchBoxComponent,
     SearchResultComponent,
-    NavbarComponent
+    NavbarComponent,
+    FlickrResultComponent,
+    FlickrSearchBoxComponent,
+    FlickrSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     FormsModule,
     routing
   ],
-  providers: [BookService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [BookService, FlickrService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
