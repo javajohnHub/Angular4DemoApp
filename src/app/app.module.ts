@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import {routing} from './app-routing.module';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {GiphyService} from './services/giphy.service';
+import {GiphyResultComponent} from './components/giphy/giphy-result.component';
+import {GiphySearchBoxComponent} from './components/giphy/giphy-searchbox.component';
+import {GiphySearchComponent} from './components/giphy/giphy-search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     NavbarComponent,
     FlickrResultComponent,
     FlickrSearchBoxComponent,
-    FlickrSearchComponent
+    FlickrSearchComponent,
+    GiphyResultComponent,
+    GiphySearchComponent,
+    GiphySearchBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     FormsModule,
     routing
   ],
-  providers: [BookService, FlickrService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [BookService, FlickrService, GiphyService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
