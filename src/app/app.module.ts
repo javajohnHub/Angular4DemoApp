@@ -19,6 +19,8 @@ import {GiphyService} from './services/giphy.service';
 import {GiphyResultComponent} from './components/giphy/giphy-result.component';
 import {GiphySearchBoxComponent} from './components/giphy/giphy-searchbox.component';
 import {GiphySearchComponent} from './components/giphy/giphy-search.component';
+import {GithubService} from './services/github.service';
+import {ProfileComponent} from './components/github/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {GiphySearchComponent} from './components/giphy/giphy-search.component';
     FlickrSearchComponent,
     GiphyResultComponent,
     GiphySearchComponent,
-    GiphySearchBoxComponent
+    GiphySearchBoxComponent,
+    ProfileComponent
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ import {GiphySearchComponent} from './components/giphy/giphy-search.component';
     FormsModule,
     routing
   ],
-  providers: [BookService, FlickrService, GiphyService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [BookService, FlickrService, GiphyService, GithubService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
